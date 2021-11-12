@@ -1,0 +1,282 @@
+@import 'mixins';
+
+
+body {
+    margin: 0;
+}
+
+
+// MENU
+.menu {
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.menuLogo {
+    @include menuLogo;
+}
+
+.cartoons {
+    z-index: 2;
+
+    @include dropdown;
+
+    & .valueOfCartoons {
+        @include dropdown-content;
+    }
+}
+
+.cartoons:hover .valueOfCartoons {
+    display: grid;
+
+    & li {
+        @include menuFontStyle($fontForHeaders, 14px)
+    }
+}
+
+.menuItems {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    & > :nth-child(n) {
+        margin-right: 3%;
+    }
+
+    & li {
+        @include menuFontStyle($fontForHeaders, 18px)
+    }
+}
+
+.menuDropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
+    
+
+    & img {
+        width: 20px;
+    }
+
+    & li {
+        font-family: $fontForHeaders;
+        list-style: none;
+    }
+}
+
+.trainingBlock {
+    position: relative;
+
+    & .mainBackgroundImage {
+        @include mainBackgroundImage;
+    }
+
+    & .mainImageBlock {
+        display: flex;
+        justify-content: center;
+
+        & .mainImage {
+            @include mainImage;
+        }
+    }
+
+    & .nameOfCartoon {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 4%;
+        & h1 {
+            font-family: $fontForHeaders;
+            color: $cartoonNameColor;
+            text-align: center;
+            font-size: 40px;
+        }
+
+    }
+}
+
+.btn {
+    color: #fff;
+    font-family: $fontForHeaders;
+    font-size: 30px;
+    line-height: 42px;
+    border: none;
+    width: 300px;
+    height: 70px;
+    border-radius: 10px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    background: linear-gradient(
+                    60deg,
+                    #f79533,
+                    #f37055,
+                    #ef4e7b,
+                    #a166ab,
+                    #5073b8,
+                    #1098ad,
+                    #07b39b,
+                    #6fba82
+                );
+
+    &:hover {
+        box-shadow: inset 0px 33px 25px 0 #6fba82, 
+        inset 0 66px 15px 0px #07b39b,
+        inset 0 99px 5px 0px #1098ad;
+    }
+    
+    &:hover:after {
+        content: "Download on Steam";
+    }
+    
+    &:hover .btnText {
+        display: none;
+    }
+}
+
+
+
+// ABOUT
+.aboutCartoonBlock {
+
+    display: grid;
+    grid-template-columns: minmax(100px, 500px) minmax(300px, 600px);
+    justify-content: center;
+    grid-column-gap: 5%;
+    background-image: url("ATGame/beachGame1.jpeg");
+    background-size: cover;
+    padding: 0 5%;
+    box-shadow: inset 0 -15px 20px -15px rgb(243, 178, 104), 0 0 10px 10px rgba(160, 220, 255, 0.76);
+    margin-top: 5%;
+    grid-template-areas: "name name"
+                        "abouttext image";
+    
+    & h3 {
+        @include headers;
+
+        grid-area: name;
+        justify-self: center;
+    }
+
+    & .aboutCartoonText {
+        grid-area: abouttext;
+
+        & p {
+            @include largeTexts;
+            text-align: justify;
+        }
+    }
+
+    & .largeImage {
+        width: 580px;
+        grid-column: 1/ span 2;
+        box-shadow: 0 2px 5px #fff;
+        margin: 5px;
+        border-radius: 5px;
+    }
+
+    & .imageCarousel {
+        grid-area: image;
+        align-self: center;
+        overflow: hidden;
+    }
+}
+
+.carouselBlock {
+    display: grid;
+    grid-template-columns: repeat(9, 200px);
+    grid-template-rows: 100px;
+    transition: all .8s ease;
+    margin-top: 4%;
+
+    & .carouselImage {
+        width: 150px;
+        justify-self: center;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+}
+
+.imageScrollButtonsBlock {
+    display: flex;
+    justify-content: center;
+
+    & img {
+        cursor: pointer;
+        width: 40px;
+    }
+}
+
+.selectedSmallImage {
+    @include selected;
+}
+
+// CHAMPIONS
+.championsBlock {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: minmax(100px, 400px) minmax(100px, 400px);
+    grid-template-rows: repeat(2, min-content) minmax(100px, 500px);
+    grid-template-areas: "header header"
+                        "text text"
+                        "buttons chosenChamp";
+    background: linear-gradient( 
+        220deg, rgba(243, 214, 85, 0.74), rgba(247, 149, 51, 0.746), rgba(245, 170, 191, 0.787), 
+        rgba(192, 123, 204, 0.7));
+    box-shadow: inset 0px -15px 20px -15px rgb(112, 160, 233);
+    
+    & > h3 {
+        grid-area: header;
+        @include headers;
+    }
+
+    & > p {
+        grid-area: text;
+        text-align: center;
+
+        @include largeTexts;
+    }
+
+    & .champions {
+        grid-area: buttons;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: flex-start;
+
+        & > div {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & img {
+                width: 80px;
+                border-radius: 50%;
+            }
+
+            & p {
+                margin: 5px;
+                font-family: $fontForText;
+                font-size: 20px;
+                color: #fff;
+                text-shadow: rgb(0, 56, 121) 6px 0 10px;
+            }
+        }
+
+    }
+
+    & .choosenChampion {
+        grid-area: chosenChamp;
+        justify-self: center;
+
+        & img {
+            width: 180px;
+        }
+    }
+}
+
+
+

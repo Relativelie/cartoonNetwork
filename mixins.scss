@@ -1,0 +1,77 @@
+$fontForHeaders: 'Bona Nova', serif;
+$fontForText: 'Open Sans', sans-serif;
+$cartoonNameColor: rgb(57, 57, 58);
+
+
+@mixin listOfCartoons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 400px));
+}
+
+
+@mixin dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+@mixin dropdown-content {
+    position: absolute;
+    display: none;
+    grid-template-columns: 100px;
+    background-color: #f9f9f9;
+    grid-row-gap: 10px;
+    padding: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.308);
+}
+
+
+@mixin mainBackgroundImage() {
+    width: 100%;
+    position: absolute;
+    filter: brightness(0.2) blur(5px);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.596);
+    z-index: -1;
+}
+
+@mixin mainImage {
+    width: 50%;
+    box-shadow: 0 3px 10px #000;
+    border-radius: 5px;
+}
+
+@mixin menuFontStyle($fontFamily, $fontSize) {
+    list-style: none;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 3px 10px rgb(0, 0, 0);
+    font-family: $fontFamily;
+    font-size: $fontSize;
+}
+
+@mixin menuLogo {
+    width: 70px;
+    margin-left: 20px;
+}
+
+@mixin selected {
+    box-shadow: 0 0 10px rgba(251, 240, 143, 0.767);
+    transform: scale(1.2);
+}
+
+@mixin headers {
+    font-family: $fontForHeaders;
+    color: $cartoonNameColor;
+    font-size: 35px;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(0, 56, 121) 6px 0 10px;
+    text-align: center;
+    margin: 30px 0 10px 0;
+}
+
+@mixin largeTexts {
+    font-family: $fontForText;
+    font-size: 20px;
+    color: #fff;
+    text-shadow: rgb(0, 56, 121) 6px 0 10px;
+    line-height: 2;
+}
