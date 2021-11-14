@@ -1,0 +1,60 @@
+@-webkit-keyframes rotate1 {
+  0% {
+    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
+            transform: rotateZ(0deg) scaleX(1) scaleY(1);
+  }
+  50% {
+    -webkit-transform: rotateZ(180deg) scaleX(0.75) scaleY(0.9);
+            transform: rotateZ(180deg) scaleX(0.75) scaleY(0.9);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) scaleX(1) scaleY(1);
+            transform: rotateZ(360deg) scaleX(1) scaleY(1);
+  }
+}
+
+@keyframes rotate1 {
+  0% {
+    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
+            transform: rotateZ(0deg) scaleX(1) scaleY(1);
+  }
+  50% {
+    -webkit-transform: rotateZ(180deg) scaleX(0.75) scaleY(0.9);
+            transform: rotateZ(180deg) scaleX(0.75) scaleY(0.9);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) scaleX(1) scaleY(1);
+            transform: rotateZ(360deg) scaleX(1) scaleY(1);
+  }
+}
+
+@-webkit-keyframes rotate2 {
+  0% {
+    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
+            transform: rotateZ(0deg) scaleX(1) scaleY(1);
+  }
+  50% {
+    -webkit-transform: rotateZ(-180deg) scaleX(0.9) scaleY(0.75);
+            transform: rotateZ(-180deg) scaleX(0.9) scaleY(0.75);
+  }
+  100% {
+    -webkit-transform: rotateZ(-360deg) scaleX(1) scaleY(1);
+            transform: rotateZ(-360deg) scaleX(1) scaleY(1);
+  }
+}
+
+@keyframes rotate2 {
+  0% {
+    -webkit-transform: rotateZ(0deg) scaleX(1) scaleY(1);
+            transform: rotateZ(0deg) scaleX(1) scaleY(1);
+  }
+  50% {
+    -webkit-transform: rotateZ(-180deg) scaleX(0.9) scaleY(0.75);
+            transform: rotateZ(-180deg) scaleX(0.9) scaleY(0.75);
+  }
+  100% {
+    -webkit-transform: rotateZ(-360deg) scaleX(1) scaleY(1);
+            transform: rotateZ(-360deg) scaleX(1) scaleY(1);
+  }
+}
+/*# sourceMappingURL=mixins.css.map */
