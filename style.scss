@@ -9,6 +9,21 @@
 
 }
 
+
+
+@mixin headers {
+    font-family: $fontForHeaders;
+    color: $cartoonNameColor;
+    font-size: clamp(20px, 2vw, 35px);
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(0, 56, 121) 6px 0 10px;
+    text-align: center;
+    padding: 30px 0 10px 0;
+    margin: 0;
+}
+
+
 body {
     margin: 0;
 }
@@ -25,6 +40,40 @@ body {
     @include menuLogo;
 }
 
+@mixin dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+@mixin menuFontStyle($fontFamily, $fontSize) {
+    list-style: none;
+    text-shadow: 0 3px 10px rgb(0, 0, 0);
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+
+    & a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+}
+
+@mixin dropdown-content {
+    position: absolute;
+    display: none;
+    grid-template-columns: 100px;
+    background-color: #fafafa9c;
+    grid-row-gap: 1px;
+    padding: 0px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.308);
+    margin-top: 6%;
+
+    @media (max-width: 650px) {
+        grid-template-columns: 80px;
+    }
+}
+
 .cartoons {
     z-index: 2;
 
@@ -32,16 +81,15 @@ body {
 
     & .valueOfCartoons {
         @include dropdown-content;
-    }
-}
-
-.cartoons:hover .valueOfCartoons {
-    display: grid;
-
-    & li {
         @include menuFontStyle($fontForHeaders, 14px)
     }
+
+    & .valueOfCartoons li { 
+        background-color: #0000009c;
+        padding: 5px;
+    }
 }
+
 
 .menuItems {
     display: flex;
@@ -52,8 +100,24 @@ body {
         margin-right: 3%;
     }
 
-    & li {
+    & > li {
         @include menuFontStyle($fontForHeaders, 18px)
+    }
+
+    & .menuDropdown li {
+        @include menuFontStyle($fontForHeaders, 18px)
+    }
+
+    @media (max-width: 650px) {
+        margin: 5px;
+
+        & li {
+            @include menuFontStyle($fontForHeaders, 12px)
+        }
+
+        & .menuDropdown li {
+            @include menuFontStyle($fontForHeaders, 12px)
+        }
     }
 }
 
@@ -71,6 +135,14 @@ body {
     & li {
         font-family: $fontForHeaders;
         list-style: none;
+    }
+
+    @media (max-width: 650px) {
+        width: 100px;
+    }
+
+    @media (max-width: 280px) {
+        width: 70px;
     }
 }
 
@@ -104,7 +176,14 @@ body {
             text-align: center;
             font-size: 40px;
         }
+    }
 
+    @media (max-width: 650px) {
+        & .nameOfCartoon {
+            & h1 {
+                font-size: 20px;
+            }
+        }
     }
 }
 
@@ -112,7 +191,6 @@ body {
     color: #fff;
     font-family: $fontForHeaders;
     font-size: 30px;
-    line-height: 42px;
     border: none;
     width: 300px;
     height: 70px;
@@ -133,6 +211,12 @@ body {
     
     &:hover .btnText {
         display: none;
+    }
+
+    @media (max-width: 650px) {
+        font-size: 15px;
+        width: 200px !important;
+        height: 40px;
     }
 }
 
@@ -196,7 +280,12 @@ body {
             justify-content: center;
             align-items: center;
         }
-        
+    }
+
+    @media (max-width: 600px)  {
+        & .largeImage {
+            width: 360px;
+        }
     }
 }
 
@@ -316,7 +405,7 @@ body {
         grid-template-rows: repeat(2, min-content) 180px 350px;
 
         & .champions {
-            justify-content: space-between;
+            justify-content: space-around;
 
         & > div {
             margin: 0px;
@@ -381,6 +470,20 @@ body {
             height: 250px;
         }
     }
+
+    @media (max-width: 650px) {
+        height: 500px;
+
+        & .bubleOfSkin {
+            & img {
+                height: 150px;
+            }
+        }
+    }
+
+    @media (max-width: 650px) {
+        height: 400px;
+    }
 }
 
 .bubleOfSkin {
@@ -432,7 +535,8 @@ body {
             & h3 {
                 font-family: $fontForHeaders;
                 font-weight: bolder;
-                font-size: 25px;
+                font-size: clamp(15px, 4vw, 25px);
+                text-align: center;
             }
 
             & p {
@@ -440,11 +544,12 @@ body {
                 text-align: justify;
                 font-size: 20px;
                 padding: 5%;
+                font-size: clamp(10px, 3vw, 20px);
             }
 
             & button {
                 font-family: $fontForText;
-                font-size: 15px;
+                font-size: clamp(10px, 1vw, 20px);
                 width: fit-content;
                 border-radius: 10px;
                 border: none;
@@ -461,6 +566,27 @@ body {
 
         & button:hover {
             background: $buttonColor;
+        }
+    }
+
+    @media (max-width: 411px) {
+        & .alsoContainerItem {
+    
+            & img {
+                width: 200px;
+                height: 251px;
+            }
+        }
+
+        & .itemText {
+            & p {
+                padding: 1% !important;
+                margin: 0;
+            }
+
+            & h3 {
+                margin: 5px;
+            }
         }
     }
 }
@@ -490,8 +616,4 @@ body {
         }
     }
 }
-
-
-
-
 

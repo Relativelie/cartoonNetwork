@@ -77,10 +77,18 @@ body {
   margin-left: 20px;
 }
 
+@media (max-width: 650px) {
+  .menuLogo {
+    width: 30px;
+    margin-left: 5px;
+  }
+}
+
 .cartoons {
   z-index: 2;
   position: relative;
   display: inline-block;
+  cursor: pointer;
 }
 
 .cartoons .valueOfCartoons {
@@ -88,24 +96,35 @@ body {
   display: none;
   -ms-grid-columns: 100px;
       grid-template-columns: 100px;
-  background-color: #f9f9f9;
-  grid-row-gap: 10px;
-  padding: 10px;
+  background-color: #fafafa9c;
+  grid-row-gap: 1px;
+  padding: 0px;
   -webkit-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.308);
           box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.308);
-}
-
-.cartoons:hover .valueOfCartoons {
-  display: -ms-grid;
-  display: grid;
-}
-
-.cartoons:hover .valueOfCartoons li {
+  margin-top: 6%;
   list-style: none;
-  color: white;
   text-shadow: 0 3px 10px black;
   font-family: "Bona Nova", serif;
   font-size: 14px;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 650px) {
+  .cartoons .valueOfCartoons {
+    -ms-grid-columns: 80px;
+        grid-template-columns: 80px;
+  }
+}
+
+.cartoons .valueOfCartoons a {
+  text-decoration: none;
+  color: white;
+}
+
+.cartoons .valueOfCartoons li {
+  background-color: #0000009c;
+  padding: 5px;
 }
 
 .menuItems {
@@ -122,12 +141,62 @@ body {
   margin-right: 3%;
 }
 
-.menuItems li {
+.menuItems > li {
   list-style: none;
-  color: white;
   text-shadow: 0 3px 10px black;
   font-family: "Bona Nova", serif;
   font-size: 18px;
+  cursor: pointer;
+  color: white;
+}
+
+.menuItems > li a {
+  text-decoration: none;
+  color: white;
+}
+
+.menuItems .menuDropdown li {
+  list-style: none;
+  text-shadow: 0 3px 10px black;
+  font-family: "Bona Nova", serif;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+}
+
+.menuItems .menuDropdown li a {
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 650px) {
+  .menuItems {
+    margin: 5px;
+  }
+  .menuItems li {
+    list-style: none;
+    text-shadow: 0 3px 10px black;
+    font-family: "Bona Nova", serif;
+    font-size: 12px;
+    cursor: pointer;
+    color: white;
+  }
+  .menuItems li a {
+    text-decoration: none;
+    color: white;
+  }
+  .menuItems .menuDropdown li {
+    list-style: none;
+    text-shadow: 0 3px 10px black;
+    font-family: "Bona Nova", serif;
+    font-size: 12px;
+    cursor: pointer;
+    color: white;
+  }
+  .menuItems .menuDropdown li a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .menuDropdown {
@@ -150,6 +219,18 @@ body {
 .menuDropdown li {
   font-family: "Bona Nova", serif;
   list-style: none;
+}
+
+@media (max-width: 650px) {
+  .menuDropdown {
+    width: 100px;
+  }
+}
+
+@media (max-width: 280px) {
+  .menuDropdown {
+    width: 70px;
+  }
 }
 
 .trainingBlock {
@@ -204,11 +285,16 @@ body {
   font-size: 40px;
 }
 
+@media (max-width: 650px) {
+  .trainingBlock .nameOfCartoon h1 {
+    font-size: 20px;
+  }
+}
+
 .btn {
   color: #fff;
   font-family: "Bona Nova", serif;
   font-size: 30px;
-  line-height: 42px;
   border: none;
   width: 300px;
   height: 70px;
@@ -232,6 +318,14 @@ body {
   display: none;
 }
 
+@media (max-width: 650px) {
+  .btn {
+    font-size: 15px;
+    width: 200px !important;
+    height: 40px;
+  }
+}
+
 .aboutCartoonBlock {
   display: -ms-grid;
   display: grid;
@@ -253,7 +347,7 @@ body {
 .aboutCartoonBlock h3 {
   font-family: "Bona Nova", serif;
   color: #39393a;
-  font-size: 35px;
+  font-size: clamp(20px, 2vw, 35px);
   font-weight: bolder;
   color: white;
   text-shadow: #003879 6px 0 10px;
@@ -324,6 +418,12 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutCartoonBlock .largeImage {
+    width: 360px;
   }
 }
 
@@ -402,7 +502,7 @@ body {
   grid-area: header;
   font-family: "Bona Nova", serif;
   color: #39393a;
-  font-size: 35px;
+  font-size: clamp(20px, 2vw, 35px);
   font-weight: bolder;
   color: white;
   text-shadow: #003879 6px 0 10px;
@@ -505,9 +605,8 @@ body {
         grid-template-rows: repeat(2, min-content) 180px 350px;
   }
   .championsBlock .champions {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   .championsBlock .champions > div {
     margin: 0px;
@@ -556,6 +655,13 @@ body {
   }
 }
 
+@media (max-width: 400px) {
+  .championsFrame {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 .championsFrame:after {
   -webkit-box-shadow: 0 1px 30px rgba(30, 136, 229, 0.6), inset 0 1px 30px rgba(30, 136, 229, 0.6), inset 1px 0 0 rgba(30, 106, 229, 0.6), inset 0 -1px 0 rgba(30, 76, 229, 0.6), inset -1px 0 0 rgba(30, 46, 229, 0.6);
           box-shadow: 0 1px 30px rgba(30, 136, 229, 0.6), inset 0 1px 30px rgba(30, 136, 229, 0.6), inset 1px 0 0 rgba(30, 106, 229, 0.6), inset 0 -1px 0 rgba(30, 76, 229, 0.6), inset -1px 0 0 rgba(30, 46, 229, 0.6);
@@ -598,7 +704,7 @@ body {
 .skins > h3 {
   font-family: "Bona Nova", serif;
   color: #39393a;
-  font-size: 35px;
+  font-size: clamp(20px, 2vw, 35px);
   font-weight: bolder;
   color: white;
   text-shadow: #003879 6px 0 10px;
@@ -618,6 +724,21 @@ body {
 
 .skins .bubleOfSkin img {
   height: 250px;
+}
+
+@media (max-width: 650px) {
+  .skins {
+    height: 500px;
+  }
+  .skins .bubleOfSkin img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 650px) {
+  .skins {
+    height: 400px;
+  }
 }
 
 .bubleOfSkin {
@@ -653,6 +774,13 @@ body {
   }
 }
 
+@media (max-width: 400px) {
+  .bubleOfSkin {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 .bubleOfSkin:after {
   background: rgba(187, 244, 251, 0.25);
   -webkit-box-shadow: inset 0 1px 30px rgba(205, 241, 251, 0.774), inset 1px 0 0 rgba(255, 255, 255, 0.6), inset 0 -1px 0 rgba(149, 248, 251, 0.87), inset -1px 0 0 rgba(249, 61, 233, 0.6);
@@ -670,7 +798,7 @@ body {
 .alsoBlock > h3 {
   font-family: "Bona Nova", serif;
   color: #39393a;
-  font-size: 35px;
+  font-size: clamp(20px, 2vw, 35px);
   font-weight: bolder;
   color: white;
   text-shadow: #003879 6px 0 10px;
@@ -727,7 +855,8 @@ body {
 .alsoBlock .alsoContainerItem .itemText h3 {
   font-family: "Bona Nova", serif;
   font-weight: bolder;
-  font-size: 25px;
+  font-size: clamp(15px, 4vw, 25px);
+  text-align: center;
 }
 
 .alsoBlock .alsoContainerItem .itemText p {
@@ -735,11 +864,12 @@ body {
   text-align: justify;
   font-size: 20px;
   padding: 5%;
+  font-size: clamp(10px, 3vw, 20px);
 }
 
 .alsoBlock .alsoContainerItem .itemText button {
   font-family: "Open Sans", sans-serif;
-  font-size: 15px;
+  font-size: clamp(10px, 1vw, 20px);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -757,6 +887,20 @@ body {
 
 .alsoBlock .alsoContainerItem button:hover {
   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+}
+
+@media (max-width: 411px) {
+  .alsoBlock .alsoContainerItem img {
+    width: 200px;
+    height: 251px;
+  }
+  .alsoBlock .itemText p {
+    padding: 1% !important;
+    margin: 0;
+  }
+  .alsoBlock .itemText h3 {
+    margin: 5px;
+  }
 }
 
 .footer {
@@ -793,11 +937,17 @@ body {
   grid-row-gap: 20px;
 }
 
+@media (max-width: 500px) {
+  .footer .footerItem {
+    grid-row-gap: 10px;
+  }
+}
+
 .footer .footerItem a {
   text-decoration: none;
   font-family: "Open Sans", sans-serif;
   color: #a0a0a0;
-  font-size: 15px;
+  font-size: clamp(10px, 1vw, 15px);
   text-align: center;
 }
 

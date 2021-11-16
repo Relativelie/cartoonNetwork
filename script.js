@@ -16,8 +16,25 @@ document.querySelector(".next").addEventListener("click", scrollImages);
 
 let value = 0;
 function scrollImages(e) {
-    let i = window.matchMedia("(max-width: 1150px)");
-    if (i.matches) {
+
+    if (window.matchMedia("(max-width: 500px)").matches) {
+        if (e.srcElement.classList[0] === "back" && value!=0) {
+            value+= 22;
+            document.querySelector(".carouselBlock").style.transform = `translateX(${value}%)`;
+        }
+    
+        else if (e.srcElement.classList[0] === "next" && value != -88) {
+            value-= 22;
+            document.querySelector(".carouselBlock").style.transform = `translateX(${value}%)`;
+        }
+    
+        else if (value === -88) {
+            value=0;
+            document.querySelector(".carouselBlock").style.transform = `translateX(${value}%)`;
+        }
+    }
+
+    else if (window.matchMedia("(max-width: 1150px)").matches) {
         if (e.srcElement.classList[0] === "back" && value!=0) {
             value+= 33.333;
             document.querySelector(".carouselBlock").style.transform = `translateX(${value}%)`;
@@ -33,6 +50,9 @@ function scrollImages(e) {
             document.querySelector(".carouselBlock").style.transform = `translateX(${value}%)`;
         }
     }
+
+
+
     else {
         if (e.srcElement.classList[0] === "back" && value!=0) {
             value+= 33.333;
@@ -94,3 +114,31 @@ let skins = [
 setInterval(()=> {
     document.querySelector(".bubleOfSkin img").src = `ATGame/${skins[Math.floor(Math.random() * 7)]}`
 }, 2500)
+
+// MENU
+document.querySelector(".cartoons").addEventListener("click", menuDropdown);
+document.addEventListener("keyup", menuDropdownEsc);
+document.addEventListener("click", menuDropdownEsc);
+
+let menuOpen = false;
+function menuDropdown() {
+    if (!(menuOpen)) {
+        document.querySelector(".valueOfCartoons").style.display = "grid";
+        document.querySelector(".menuDropdown img").src = "ATGame/sortDown.png";
+        menuOpen = true;
+    }
+
+    else {
+        document.querySelector(".valueOfCartoons").style.display = "none";
+        document.querySelector(".menuDropdown img").src = "ATGame/sortUp.png";
+        menuOpen = false;
+    }
+    
+}
+
+function menuDropdownEsc(e) {
+    if ((e.key === "Escape" && menuOpen) || (menuOpen && e.type === "click" && e.srcElement.classList != "menuDropdown" && e.srcElement.parentElement.classList[0] != "menuDropdown")) {
+        document.querySelector(".valueOfCartoons").style.display = "none";
+        menuOpen = false;
+    }
+}
