@@ -2,7 +2,7 @@ let cartoonPageItems = {
     "Adventure Time":
     {
         "video": "ATCartoon/ATVideo.gif",
-        "video": "ATCartoon/ATVideoBack.gif",
+        "videoTwo": "ATCartoon/ATVideoBack.gif",
         "logo": "ATGame/logo.png",
         "seriesOne": ["ATCartoon/newsImage1.gif", "Come Along with Me", "The fate of Ooo is revealed to two adventurers in the distant future. Princess Bubblegum gathers her allies while Finn searches for a way to prevent the coming Great Gum War."],
         "seriesTwo": ["ATCartoon/newsImage2.gif", "Gumbaldia", "Finn and Jake, as ambassadors of the Candy Kingdom, travel to a powerful new city-state in a last ditch effort to stave off war."],
@@ -41,7 +41,7 @@ let cartoonPageItems = {
     "Regular Show":
     {
         "video": "regularShow/regularShow.gif",
-        "video": "regularShow/regularShowBack.gif",
+        "videoTwo": "regularShow/regularShowBack.gif",
         "logo": "regularShow/regularShowLogo.png",
         "seriesOne": ["regularShow/firstSeries.gif", "A Regular Epic Final Battle", "An epic final battle comes to its dramatic conclusion, and the fate of the universe is decided..."],
         "seriesTwo": ["regularShow/secondSeries.gif", "Into the Unknown", "Taking place before the events of the first episode, on Halloween, Wirt has just finished making an audio cassette tape for his crush, Sara..."],
@@ -81,7 +81,7 @@ let cartoonPageItems = {
     "Over The Garden Wall":
     {
         "video": "gardenWall/overTheGarden.gif",
-        "video": "gardenWall/overTheGardenBack.gif",
+        "videoTwo": "gardenWall/overTheGardenBack.gif",
         "logo": "gardenWall/wallLogo.png",
         "seriesOne": ["gardenWall/seriesOne.gif", "The Unknown", "After leaving Wirt with her family, Beatrice navigates through the storm to find Greg, who she sees performing meaningless tasks for the Beast. She is whisked..."],
         "seriesTwo": ["gardenWall/seriesTwo.gif", "Into the Unknown", "Taking place before the events of the first episode, on Halloween, Wirt has just finished making an audio cassette tape for his crush, Sara..."],
@@ -123,7 +123,7 @@ let cartoonPageItems = {
     "The Amazing World of Gumball":
     {
         "video": "gumball/gumball.gif",
-        "videoTwo": "bears/gumballBack.gif",
+        "videoTwo": "gumball/gumballBack.gif",
         "logo": "gumball/gumballLogo.png",
         "seriesOne": ["gumball/firstSeries.gif", "The Vegging", "Gumball and Darwin have decided to do nothing for a whole day, but sometimes it's much harder to do nothing than something."],
         "seriesTwo": ["gumball/secondSeries.gif", "The One", "Gumball is surprised by how upset he is when Tobias makes fun of him, and he tries to figure out why he feels Tobias doesn't have the right."],
