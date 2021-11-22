@@ -472,6 +472,10 @@ _::-webkit-full-page-media, _:future, :root .inner-book {
     & .footerItem {
         @include cartoonBlockInfooter;
 
+        & p {
+            @include cartoonTextInFooter;
+        }
+
         & a {
             @include cartoonTextInFooter;
         }

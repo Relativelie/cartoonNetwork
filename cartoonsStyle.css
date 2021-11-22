@@ -887,12 +887,28 @@ _::-webkit-full-page-media, _:future, :root .inner-book {
   }
 }
 
+.footer .footerItem p {
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  color: #a0a0a0;
+  font-size: clamp(10px, 1vw, 15px);
+  text-align: center;
+  cursor: pointer;
+  margin: 0;
+}
+
+.footer .footerItem p:hover {
+  color: white;
+}
+
 .footer .footerItem a {
   text-decoration: none;
   font-family: "Open Sans", sans-serif;
   color: #a0a0a0;
   font-size: clamp(10px, 1vw, 15px);
   text-align: center;
+  cursor: pointer;
+  margin: 0;
 }
 
 .footer .footerItem a:hover {

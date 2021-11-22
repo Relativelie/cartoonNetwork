@@ -1,14 +1,5 @@
 import cartoonPageItems from './cartoonPageParameters.js';
 
-window.addEventListener("resize", mainVideoHeight);
-window.addEventListener('load', mainVideoHeight);
-
-
-function mainVideoHeight() {
-
-    document.querySelector(".mainBackgroundImage").style.top = `-${document.querySelector(".mainBackgroundImage").offsetHeight / 2}px`;
-    document.querySelector(".mainImage").style.marginTop = `${document.querySelector(".mainBackgroundImage").offsetHeight / 4}px`
-}
 
 
 
@@ -125,6 +116,14 @@ document.querySelector(".valueOfCartoons > :nth-child(4)").addEventListener("cli
 document.querySelector(".valueOfCartoons > :nth-child(5)").addEventListener("click", selectedPage);
 
 
+document.querySelector(".footerItem p:nth-child(1)").addEventListener("click", selectedPage);
+document.querySelector(".footerItem p:nth-child(2)").addEventListener("click", selectedPage);
+document.querySelector(".footerItem p:nth-child(3)").addEventListener("click", selectedPage);
+document.querySelector(".footerItem p:nth-child(4)").addEventListener("click", selectedPage);
+document.querySelector(".footerItem p:nth-child(5)").addEventListener("click", selectedPage);
+
+
+
 function selectedPage(e) {
 
     document.querySelector(".mainImageBlock img").src = cartoonPageItems[e.srcElement.innerText].video;
@@ -168,5 +167,15 @@ function selectedPage(e) {
         bookBuyLink[book].href = cartoonPageItems[e.srcElement.innerText].books[book][3];
 
     }
+}
 
+
+window.addEventListener("resize", mainVideoHeight);
+window.addEventListener('load', mainVideoHeight);
+
+
+function mainVideoHeight() {
+
+    document.querySelector(".mainBackgroundImage").style.top = `-${document.querySelector(".mainBackgroundImage").offsetHeight / 2}px`;
+    document.querySelector(".mainImage").style.marginTop = `${document.querySelector(".mainBackgroundImage").offsetHeight / 4}px`
 }
