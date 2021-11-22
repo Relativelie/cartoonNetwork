@@ -127,7 +127,7 @@ document.querySelector(".footerItem p:nth-child(5)").addEventListener("click", s
 function selectedPage(e) {
 
     document.querySelector(".mainImageBlock img").src = cartoonPageItems[e.srcElement.innerText].video;
-    document.querySelector(".mainBackgroundImage").src = cartoonPageItems[e.srcElement.innerText].videoTwo;
+    document.querySelector(".mainBackgroundImage").src = cartoonPageItems[e.srcElement.innerText].video;
     document.querySelector(".nameOfCartoon img").src = cartoonPageItems[e.srcElement.innerText].logo;
     document.querySelector(".menuLogo").src = cartoonPageItems[e.srcElement.innerText].logo;
     let backgroundSeries = document.querySelectorAll(".backgroundSeries");
