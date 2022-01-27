@@ -54,7 +54,7 @@ $backSeriesColor: linear-gradient(
 }
 
 @mixin alsoBack {
-    background-image: url("../../general/starsOnTheSky.jpg");
+    background-image: url("../../images/general/starsOnTheSky.jpg");
     background-size: cover;
     background-position: bottom;
     padding-bottom: 5%;
@@ -312,7 +312,7 @@ $backSeriesColor: linear-gradient(
     grid-template-columns: minmax(100px, 500px) minmax(300px, 600px);
     justify-content: center;
     grid-column-gap: 5%;
-    background-image: url("../../ATGame/beachGame1.jpeg");
+    background-image: url("../../images/ATGame/beachGame1.jpeg");
     background-position: bottom;
     background-size: cover;
     padding: 0 5%;

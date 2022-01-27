@@ -92,7 +92,7 @@ document.querySelector(".marceline").addEventListener("click", selectChampion);
 document.querySelector(".finn").addEventListener("click", selectChampion);
 
 function selectChampion(e) {
-    document.querySelector(".choosenChampion img").src = `ATGame/${e.srcElement.classList[0]}.png`;
+    document.querySelector(".choosenChampion img").src = `../../images/ATGame/${e.srcElement.classList[0]}.png`;
     document.querySelector(".selectedChampion").classList.remove("selectedChampion");
     document.querySelector(`.${e.srcElement.classList[0]}`).classList.add("selectedChampion");
 
@@ -112,7 +112,7 @@ let skins = [
 
 
 setInterval(()=> {
-    document.querySelector(".bubleOfSkin img").src = `ATGame/${skins[Math.floor(Math.random() * 7)]}`
+    document.querySelector(".bubleOfSkin img").src = `../../images/ATGame/${skins[Math.floor(Math.random() * 7)]}`
 }, 2500)
 
 

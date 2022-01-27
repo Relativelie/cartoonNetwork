@@ -13,13 +13,13 @@ document.addEventListener("click", menuDropdownEsc);
 function menuDropdown() {
     if (!(menuOpen)) {
         document.querySelector(".valueOfCartoons").style.display = "grid";
-        document.querySelector(".menuDropdown img").src = "ATGame/sortDown.png";
+        document.querySelector(".menuDropdown img").src = "../../images/ATGame/sortDown.png";
         menuOpen = true;
     }
 
     else {
         document.querySelector(".valueOfCartoons").style.display = "none";
-        document.querySelector(".menuDropdown img").src = "ATGame/sortUp.png";
+        document.querySelector(".menuDropdown img").src = "../../images/ATGame/sortUp.png";
         menuOpen = false;
     }
 
@@ -28,7 +28,7 @@ function menuDropdown() {
 function menuDropdownEsc(e) {
     if ((e.key === "Escape" && menuOpen) || (menuOpen && e.type === "click" && e.srcElement.classList != "menuDropdown" && e.srcElement.parentElement.classList[0] != "menuDropdown")) {
         document.querySelector(".valueOfCartoons").style.display = "none";
-        document.querySelector(".menuDropdown img").src = "ATGame/sortUp.png";
+        document.querySelector(".menuDropdown img").src = "../../images/ATGame/sortUp.png";
         menuOpen = false;
     }
 }
