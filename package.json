@@ -1,0 +1,22 @@
+{
+  "name": "cartoonnetwork",
+  "version": "1.0.0",
+  "description": "A simple sass compile config.",
+  "main": "-",
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=expanded stylesheets/scss:stylesheets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Relativelie/cartoonNetwork.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Relativelie/cartoonNetwork/issues"
+  },
+  "homepage": "https://github.com/Relativelie/cartoonNetwork#readme",
+  "devDependencies": {
+    "sass": "^1.49.0"
+  }
+}
